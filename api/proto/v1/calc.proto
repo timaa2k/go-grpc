@@ -1,0 +1,22 @@
+syntax = "proto3";
+package v1;
+
+message Operands {
+    float left = 1;
+    float right = 2;
+}
+
+message CalcRequest {
+    Operands operands = 1;
+}
+
+message CalcResponse {
+    float result = 2;
+}
+
+service CalcService {
+    rpc Add(CalcRequest) returns (CalcResponse);
+    rpc Sub(CalcRequest) returns (CalcResponse);
+    rpc Mul(CalcRequest) returns (CalcResponse);
+    rpc Div(CalcRequest) returns (CalcResponse);
+}

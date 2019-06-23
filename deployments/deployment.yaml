@@ -1,0 +1,31 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: calc-service
+spec:
+  selector:
+    app: calc-service
+  ports:
+  - protocol: TCP
+    port: 7777
+    targetPort: 9111
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: calc-server
+spec:
+  selector:
+    matchLabels:
+      app: calc
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: calc
+    spec:
+      containers:
+      - name: calc-container
+        image: calc-server:v0
+        ports:
+        - containerPort: 9111
