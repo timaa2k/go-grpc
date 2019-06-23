@@ -68,7 +68,7 @@ $ calc-client add -- -1 2
 1
 ```
 
-# [12 Factor](https://12factor.net/) Best Practices
+## [12 Factor](https://12factor.net/) Best Practices
 
 1. Codebase under version control (`git`)
 2. All dependencies bundled via `go mod vendor`. Third-party tools like `protoc-gen-go` and `kind` are vendored as well.
@@ -81,11 +81,11 @@ $ calc-client add -- -1 2
 9. `calc-server` can be started/stopped in an instant and it shuts down gracefully.
 10. This project is designed for continous deployment, it's just not set up yet.
 
-# Cloud Native Understanding
+## Cloud Native Understanding
 
 This project ships `calc-server` in a `Docker` image which can be readily deployed on any Kubernetes cluster via the `deployment.yaml` file also shipped with the source code. This means anyone can get it up and running on most cloud providers and onprem in a matter of minutes. The project aims to automate deployments and configuration as much as possible.
 
-# Expanding this service
+## Expanding this service
 
 * Expand the API to allow for `square root` operation (second payload + response type)
 * Set up CI job (Travis or CircleCI on GitHub)
@@ -93,6 +93,6 @@ This project ships `calc-server` in a `Docker` image which can be readily deploy
 * Get external connection to Kubernetes to work (on Kubernetes in Docker).
 * Add TLS. The `Dockerfile` is prepared for that, CA certificates must be set up.
 
-# Access from the outside to the cluster
+## Access from the outside to the cluster
 
 The project is certainly lacking a proper `Kubernetes` deployment setup, however due to time limitations this was not further explored so far. One could imagine an `IngressController` being set up to control traffic the the `calc-service` in the current deployment scheme.
