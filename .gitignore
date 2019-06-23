@@ -1,6 +1,6 @@
 # Binaries
-calc-server
-calc-client
+./calc-server
+./calc-client
 
 # Test binary, build with `go test -c`
 *.test
