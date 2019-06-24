@@ -90,9 +90,10 @@ This project ships `calc-server` in a `Docker` image which can be readily deploy
 * Expand the API to allow for `square root` operation (second payload + response type)
 * Set up CI job (Travis or CircleCI on GitHub)
 * Set up test coverage reporting.
+* Upload release images to Docker registry.
 * Get external connection to Kubernetes to work (on Kubernetes in Docker).
 * Add TLS. The `Dockerfile` is prepared for that, CA certificates must be set up.
 
 ## Access from the outside to the cluster
 
-The project is certainly lacking a proper `Kubernetes` deployment setup, however due to time limitations this was not further explored so far. One could imagine an `IngressController` being set up to control traffic the the `calc-service` in the current deployment scheme.
+The project is certainly lacking a proper `Kubernetes` deployment setup, however due to time limitations this was not further explored so far. One could imagine an `IngressController` being set up to control traffic the the `calc-service` in the current deployment scheme. Setting up a traffic proxy for routing like Traefik should probably be done as well.
